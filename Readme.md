@@ -4,6 +4,12 @@ This library is based on the [ArduinoJoystickLibrary by Matthew Heironimus](http
 
 It ports the ArduinoJoystickLibrary (V2.1.1) to be built ontop of the mbed USBHID library. This allows it to run on mbed platforms such as the RP2040 in the Raspberry Pi Pico.
 
+On the Pico, it is supposed to run on the default Arduino board definition for the RP2040 (Arduino mbed OS RP2040).
+
+## Version 0.9.0
+
+This is the initial version. It has been smoke tested with 1 axis on a Raspberry Pi Pico but nothing more.
+
 ## Features
 
 (Same as ArduinoJoystickLibrary) 
