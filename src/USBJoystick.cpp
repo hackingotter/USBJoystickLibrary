@@ -134,8 +134,6 @@ Joystick_::Joystick_(
 // Tells the parent class what descriptor to use
 const uint8_t *Joystick_::report_desc()
 {
-	digitalWrite(17, HIGH);
-
 	// Axis Calculations
 	uint8_t axisCount = 0;
 	if (_includeAxisFlags & JOYSTICK_INCLUDE_X_AXIS == JOYSTICK_INCLUDE_X_AXIS)
@@ -782,7 +780,8 @@ void Joystick_::sendState()
 	data[index++] = _hidReportId;
 
 	// Load Button State
-	for (; index < _buttonValuesArraySize; index++)
+	int firstButtonIndex = index;
+	for (; index < _buttonValuesArraySize + firstButtonIndex; index++)
 	{
 		data[index] = _buttonValues[index];
 	}
