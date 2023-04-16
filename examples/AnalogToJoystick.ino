@@ -5,6 +5,7 @@ Joystick_ *Joystick = new Joystick_(); // it is important to make this instance 
 void setup() {
   // Initialize Joystick Library
   Joystick->setXAxisRange(0, 1024);
+  sleep_ms(1000); // on some picos a delay is needed or the OS will go into an exception.
   Joystick->begin(true);
 }
 
